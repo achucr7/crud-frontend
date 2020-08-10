@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import ModalForm from './Components/Modals/Modal'
 import DataTable from './Components/Tables/DataTable'
@@ -55,7 +56,7 @@ class App extends Component {
       <Container className="App">
         <Row>
           <Col>
-            <h1 style={{margin: "20px 0"}}>CRUD Database</h1>
+            <h1 style={{margin: "20px 0"}} id='title'>Sales Rep</h1>
           </Col>
         </Row>
         <Row>

@@ -26,6 +26,7 @@ class AddEditForm extends React.Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
+        id: this.state.id,
         name: this.state.name,
         opening_sales: this.state.opening_sales,
         closing_sales: this.state.closing_sales
@@ -86,6 +87,11 @@ class AddEditForm extends React.Component {
   render() {
     return (
       <Form onSubmit={this.props.item ? this.submitFormEdit : this.submitFormAdd}>
+        <FormGroup>
+          <Label for="name">Id</Label>
+          <Input type="text" name="id" id="id" onChange={this.onChange} value={this.state.id === null ? '' : this.state.id} />
+        </FormGroup>
+        
         <FormGroup>
           <Label for="name">Name</Label>
           <Input type="text" name="name" id="first" onChange={this.onChange} value={this.state.name === null ? '' : this.state.name} />
